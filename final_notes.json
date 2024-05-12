@@ -1,0 +1,82 @@
+[
+  {
+    "title": "Class Structure",
+    "text": "Simple syntax of classes in python includes: class ClassName: then the statement(s) within the class. The statements inside a class definition will usually be function definitions, but other statements are allowed.",
+    "code snippet": "class Name: def __init__()",
+    "link": "https://docs.python.org/3/tutorial/classes.html",
+    "tags": "pythonclasses",
+    "meta": "Created 2024-05-11 18:39:36.126492, Eastern Daylight Time"
+  },
+  {
+    "title": "Networked Programs",
+    "text": "Before opening a socket(a socket is much like a file, except that a single socket provides a two-way connection between two programs), you must import socket first.",
+    "code snippet": "import socket \nmysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) \nmysock.connect(('data.pr4e.org', 80))",
+    "link": "https://www.py4e.com/html3/12-network",
+    "tags": "network",
+    "meta": "Created 2024-05-11 18:39:36.378500, Eastern Daylight Time\nEdited 2024-05-12 16:05:19.288245, Eastern Daylight Time"
+  },
+  {
+    "title": "Inheritance",
+    "text": "When we create a new class (child) by extending an existing class (parent). The child class has all the attributes and methods of the parent class plus additional attributes and methods defined by the child class. A child class is a new class created when a parent class is extended. The child class inherits all of the attributes and methods of the parent class.",
+    "code snippet": "None.",
+    "link": "https://www.py4e.com/html3/14-objects",
+    "tags": "pythonclasses",
+    "meta": "Created 2024-05-11 18:39:36.582420, Eastern Daylight Time"
+  },
+  {
+    "title": "Saving and Reading Text Files",
+    "text": "None.",
+    "code snippet": "# save as a text file\nwith open(\"notes1.txt\", \"w\") as f:\n    for note in notes:\n        f.write(f\"{note['title']}\\n{note['text']}\\n{note['meta']}\\n\")\n# read in text file \nnew_notes = []\nwith open(\"notes1.txt\", \"r\") as f:\n    lines = f.readlines()\n    for i in range(0, len(lines), 3):\n        title = lines[i].strip()\n        text = lines[i+1].strip()\n        meta = lines[i+2].strip()\n        new_notes.append({'title': title, 'text': text, 'meta': meta})",
+    "link": "None.",
+    "tags": "txtfiles",
+    "meta": "Created 2024-05-11 18:39:36.778830, Eastern Daylight Time\nEdited 2024-05-12 15:57:35.572094, Eastern Daylight Time"
+  },
+  {
+    "title": "Saving and Reading CSV Files",
+    "text": "None.",
+    "code snippet": "# save as a csv file\nwith open(\"notes1.csv\", \"w\", newline='') as csvfile:\n    fieldnames = ['title', 'text', 'meta']\n    writer = csv.DictWriter(csvfile, fieldnames = fieldnames)\n    writer.writeheader()\n    for note in notes:\n        writer.writerow(note)\n# read in csv file \nnew_notes_csv = []\nwith open(\"notes1.csv\", \"r\", newline = '') as csvfile:\n    reader = csv.DictReader(csvfile)\n    for row in reader:\n        print(row)\n        new_notes_csv.append(row)\n    print(new_notes_csv)",
+    "link": "None.",
+    "tags": "csvfiles",
+    "meta": "Created 2024-05-11 18:39:36.958755, Eastern Daylight Time\nEdited 2024-05-12 15:58:34.624389, Eastern Daylight Time"
+  },
+  {
+    "title": "Saving and Reading JSON Files",
+    "text": "None.",
+    "code snippet": "# save json file\nwith open (\"notes1.json\", \"w\") as jsonfile:\n    json.dump(notes, jsonfile)\n# read json file\nwith open(\"notes1.json\", \"r\") as jsonfile:\n    new_notes_json = json.load(jsonfile)",
+    "link": "None.",
+    "tags": "jsonfiles",
+    "meta": "Created 2024-05-11 18:39:37.427952, Eastern Daylight Time\nEdited 2024-05-12 15:59:19.344165, Eastern Daylight Time"
+  },
+  {
+    "title": "Understanding Class",
+    "text": "I found a good analogy regarding class in one of the py4e chapter.\n\u201cJust as the def keyword does not cause function code to be executed, the class keyword does not create an object. Instead, the class keyword defines a template indicating what data and code will be contained in each object of type PartyAnimal. The class is like a cookie cutter and the objects created using the class are the cookiesLinks to an external site.. You don\u2019t put frosting on the cookie cutter; you put frosting on the cookies, and you can put different frosting on each cookie.\u201d",
+    "code snippet": "None.",
+    "link": "https://www.py4e.com/html3/14-objects",
+    "tags": "pythonclasses",
+    "meta": "Created 2024-05-11 18:39:37.586538, Eastern Daylight Time\nEdited 2024-05-12 16:00:46.562784, Eastern Daylight Time"
+  },
+  {
+    "title": "GUI Application ",
+    "text": "Don\u2019t forget to put window.mainloop or tk.mainloop (whatever you called tk()) at the end otherwise nothing will pop up if all your other code works.",
+    "code snippet": "window.mainloop\ntk.mainloop",
+    "link": "None.",
+    "tags": "tkinter",
+    "meta": "Created 2024-05-11 18:39:37.750102, Eastern Daylight Time\nEdited 2024-05-12 16:02:03.983783, Eastern Daylight Time"
+  },
+  {
+    "title": "Class Inheritance",
+    "text": "To create a class that inherits the functionality from another class, send the parent class as a parameter when creating the child class. For examples, I have a parent class called \"Person\", so for the child class to inherit the functionality of the parent class \"Person\", I would put: class Student(Person): .",
+    "code snippet": "None.",
+    "link": "https://www.w3schools.com/python/python_inheritance.asp",
+    "tags": "inheritance",
+    "meta": "Created 2024-05-11 18:39:37.934424, Eastern Daylight Time\nEdited 2024-05-12 16:03:54.220662, Eastern Daylight Time"
+  },
+  {
+    "title": "How to Create and Use a Module",
+    "text": "To create a module just save the code you want in a file with the file extension .py. Then, to use the module created, import the module by its name. For example, I create a module named \"Hello,\" so to use this module I would do: import Hello.",
+    "code snippet": "None.",
+    "link": "https://www.w3schools.com/python/python_modules.asp",
+    "tags": "pythonmodule",
+    "meta": "Created 2024-05-11 18:39:38.094903, Eastern Daylight Time\nEdited 2024-05-12 16:04:32.753662, Eastern Daylight Time\nEdited 2024-05-12 16:04:46.453523, Eastern Daylight Time"
+  }
+]
